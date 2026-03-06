@@ -70,7 +70,8 @@ expression_data_metadata <- expression_data %>%
 
 ggplot(
   data = expression_data_metadata,
-  mapping = aes(x = immunophenotype, y = expression)) + 
+  # Plot on the natural log scale to handle the large range of expression data
+  mapping = aes(x = immunophenotype, y = log(expression))) + 
   geom_boxplot()
 
 ## Save the plot
